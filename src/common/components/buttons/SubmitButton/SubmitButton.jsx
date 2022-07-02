@@ -1,19 +1,19 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-export const SubmitButton = ({ children, value }) => {
+export const SubmitButton = ({ children, value, setValue }) => {
     return (
-        <button>
+        <button onClick={e => setValue(value)}>
             {children}
         </button>
     )
 }
 
 SubmitButton.propTypes = {
-    value: propTypes.string
+    value: propTypes.object
 }
 
 SubmitButton.defaultTypes = {
     value: '',
-    childer: 'Fuck'
+    children: 'Fuck'
 }

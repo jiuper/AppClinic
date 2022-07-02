@@ -5,13 +5,16 @@ import { Navbar } from '../Navbar/Navbar'
 
 export const Header = () => {
     return (
-        <div className='header'>
-            <div className='header__logo'>
-                <Logotip />
+        <header className='header'>
+            <div className={`${'header__items'} ${'container'}`}>
+                <div className='header__logo'>
+                    <Logotip />
+                </div>
+                <div className='header__nav'>
+                    <Navbar />
+                </div>
             </div>
-            <div className='header__nav'>
-                <Navbar />
-            </div>
-        </div>
+
+        </header>
     )
 }
