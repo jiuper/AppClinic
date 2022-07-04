@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 
-export const Input = () => {
-    const [value, setValue] = useState('')
+export const Input = ({ value, valueTitle, nameTitle, setValue, handleChange }) => {
+
   return (
-    <input value={value} onChange={e => setValue(e.target.value)} />
+    <input value={valueTitle} onChange={(e) => handleChange(e.target.value, value, nameTitle, setValue)} />
   )
 }
 
 
 Input.defaultTypes = {
-    value: '',
+  value: '',
 }

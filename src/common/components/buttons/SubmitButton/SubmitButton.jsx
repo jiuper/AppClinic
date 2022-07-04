@@ -1,9 +1,10 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-export const SubmitButton = ({ children, value, setValue }) => {
+export const SubmitButton = ({ children, value, setValue, accounts, addNewAccount }) => {
+    
     return (
-        <button onClick={e => setValue(value)}>
+        <button onClick={() => addNewAccount(value,accounts, setValue)}>
             {children}
         </button>
     )

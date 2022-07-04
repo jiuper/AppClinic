@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './App.css';
 import { Main } from './pages/Main/Main';
@@ -7,8 +7,6 @@ import { SignUp } from './pages/SignUp/SignUp';
 import { Header } from './template/Header/Header';
 
 export const App = () => {
-
-  const [pageId, setPageId] = useState('/SignUp/*')
   
   return (
     <div className='wrapper' >
@@ -16,10 +14,8 @@ export const App = () => {
       <div className='container'>
         <Routes>
           <Route path='/*' element={<Main />} />
-          <Route path={pageId} element={
-          <SignUp
-          setValue={setPageId} 
-          />} />
+          <Route path='/SignUp/*' element={
+            <SignUp />} />
           <Route path='/OrderCoupon/*' element={<OrderCoupon />} />
         </Routes>
       </div>
