@@ -16,10 +16,9 @@ export const App = () => {
       <div className='container'>
         <Routes>
           <Route path='/*' element={<Main />} />
-          <Route path={pageId} 
-          element={
+          <Route path={pageId} element={
           <SignUp
-          setPageId={setPageId} 
+          setValue={setPageId} 
           />} />
           <Route path='/OrderCoupon/*' element={<OrderCoupon />} />
         </Routes>

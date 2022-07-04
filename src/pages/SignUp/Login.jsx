@@ -1,10 +1,10 @@
 import React from 'react'
-import { SubmitButton } from '../../common/components/buttons/SubmitButton/SubmitButton'
+import { FormLogin } from '../../common/components/forms/FormLogin/FormLogin'
 
 export const Login = () => {
   return (
     <div>
-        <SubmitButton>Пост</SubmitButton>
+        <FormLogin/>
     </div>
   )
 }

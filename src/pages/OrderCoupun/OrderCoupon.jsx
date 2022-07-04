@@ -2,6 +2,9 @@ import React from 'react'
 
 export const OrderCoupon = () => {
   return (
-    <div>OrderCoupon</div>
+    <div>
+      <span>asd</span>
+    </div>
+
   )
 }
