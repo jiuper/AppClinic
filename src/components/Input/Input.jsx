@@ -12,3 +12,5 @@ export const Input = ({ value, valueTitle, nameTitle,handleChange, setValue  }) 
     
   )
 }
+
+

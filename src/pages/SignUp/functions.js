@@ -13,7 +13,7 @@ export const addNewAccount = (value, accounts, setValue, setAccount) => {
     } else {
         setValue([...accounts, newAccount])
         alert('Вы успешно зарегистрировались')
-        setAccount({ name: '', surname: '', age: '', login: '', password: '' })
+        setAccount({ name: '', surname: '', email: '', login: '', password: '' })
     }
 }
 

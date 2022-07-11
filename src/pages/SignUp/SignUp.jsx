@@ -4,7 +4,7 @@ import { Modal } from '../../template/Modal/Modal'
 import { Login } from './Login'
 import { Regestration } from './Regestration'
 import { selectButton } from './functions'
-export const SignUp = ({accounts, setAccounts}) => {
+export const SignUp = ({ accounts, setAccounts, handleId,users }) => {
 
   const [page, setPage] = useState(<Regestration
     accounts={accounts}
@@ -38,7 +38,10 @@ export const SignUp = ({accounts, setAccounts}) => {
             Sign Up
           </SubmitButton>
           <SubmitButton
-            value={<Login />}
+            value={
+            <Login 
+            accounts={accounts} 
+            />}
             setValue={setPage}
             handleAction={selectButton}
             accounts={''}

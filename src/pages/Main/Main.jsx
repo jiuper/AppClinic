@@ -5,7 +5,7 @@ export const Main = () => {
   return (
     <div>
       <span>Welcome to Home page</span>
-        <NavLink to='/OrderCoupon'>Order Coupun</NavLink>
+        <NavLink to='/Booking'>Записаться к специалисту</NavLink>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const OrderCoupon = () => {
+export const Booking = () => {
   return (
     <div>
       <span>asd</span>
