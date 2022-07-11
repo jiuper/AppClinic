@@ -1,11 +1,11 @@
 import React from 'react'
-import { OrderCoupon } from '../OrderCoupun/OrderCoupon'
-
+import {NavLink } from 'react-router-dom'
 export const Main = () => {
+
   return (
     <div>
       <span>Welcome to Home page</span>
-        <button><OrderCoupon/></button>
+        <NavLink to='/OrderCoupon'>Order Coupun</NavLink>
     </div>
   )
 }

@@ -17,6 +17,7 @@
   box-shadow: 7px 10px 67px 0px rgb(34 60 80 / 44%);
   border-radius: 5px;
   position: relative;
+  padding: 0 15px;
 }
 
 .modal__head {
@@ -34,10 +35,11 @@
   border-radius: 5px;
 }
 
-.modal__close{
-    right: 3%;
-    top: 2%;
-    position: absolute;
+.moodal__title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 
 .modal__close img {

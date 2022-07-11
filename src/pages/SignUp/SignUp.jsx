@@ -1,12 +1,22 @@
-import React, { useState } from 'react'
-import { SubmitButton } from '../../common/components/buttons/SubmitButton/SubmitButton'
+import React, { useEffect, useState } from 'react'
+import { SubmitButton } from '../../components/buttons/SubmitButton/SubmitButton'
 import { Modal } from '../../template/Modal/Modal'
 import { Login } from './Login'
 import { Regestration } from './Regestration'
+import { selectButton } from './functions'
+export const SignUp = ({accounts, setAccounts}) => {
 
-export const SignUp = ({ setValue }) => {
-  
-  const [page, setPage] = useState(<Regestration />)
+  const [page, setPage] = useState(<Regestration
+    accounts={accounts}
+    setAccounts={setAccounts}
+  />)
+
+  useEffect(() => {
+    setPage(<Regestration
+      accounts={accounts}
+      setAccounts={setAccounts}
+    />)
+  }, [accounts])
 
   return (
     <div className='signUp'>
@@ -15,10 +25,24 @@ export const SignUp = ({ setValue }) => {
         title={'Welcome'}
       >
         <div className='modal__buttons'>
-          <SubmitButton value={<Regestration />} setValue={setPage}>
+          <SubmitButton
+            value={
+              <Regestration
+                accounts={accounts}
+                setAccounts={setAccounts}
+              />}
+            setValue={setPage}
+            handleAction={selectButton}
+            accounts={''}
+          >
             Sign Up
           </SubmitButton>
-          <SubmitButton value={<Login />} setValue={setPage}>
+          <SubmitButton
+            value={<Login />}
+            setValue={setPage}
+            handleAction={selectButton}
+            accounts={''}
+          >
             Sign In
           </SubmitButton>
         </div>
