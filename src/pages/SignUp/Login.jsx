@@ -1,10 +1,24 @@
 import React from 'react'
-import { FormLogin } from '../../common/components/forms/FormLogin/FormLogin'
+import { SubmitButton } from '../../components/buttons/SubmitButton/SubmitButton'
+import { Form } from '../../components/Form/Form'
+import { Input } from '../../components/Input/Input'
 
 export const Login = () => {
   return (
-    <div>
-        <FormLogin/>
-    </div>
+    <>
+      <Form
+        title='Form login'
+      >
+        <div className='form__login'>
+          <Input
+          nameTitle={'Login'}
+          />
+          <Input 
+          nameTitle={'Password'}
+          />
+        </div>
+        <SubmitButton >login</SubmitButton>
+      </Form>
+    </>
   )
 }

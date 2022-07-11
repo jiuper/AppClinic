@@ -1,19 +1,20 @@
 export const handleChange = (e, account, nameTitle, setAccount) => {
-    setAccount({ ...account, [nameTitle]: e })
+    setAccount({ ...account, [nameTitle.toLowerCase()] : e })
 }
 
-export const addNewAccount = (value, accounts, setValue) => {
-    debugger
+export const addNewAccount = (value, accounts, setValue, setAccount) => {
     const newAccount = {
+        ...value,
         id: Date.now(),
-        name: [value.name],
-        surname: [value.surname],
-        age: [value.age],
-        login: [value.login],
-        password: [value.password]
     }
 
-    setValue([...accounts, newAccount])
+    if (value.name === '' || value.surname === '' || value.email === ''|| value.login === '' || value.password === '') {
+        alert('Вы не заполили поля')
+    } else {
+        setValue([...accounts, newAccount])
+        alert('Вы успешно зарегистрировались')
+        setAccount({ name: '', surname: '', age: '', login: '', password: '' })
+    }
 }
 
 export const selectButton = (value, accounts, setValue) => {

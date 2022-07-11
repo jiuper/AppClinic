@@ -1,33 +1,22 @@
-import React, { useState } from 'react'
-import { SubmitButton } from '../../common/components/buttons/SubmitButton/SubmitButton'
+import React, { useEffect, useState } from 'react'
+import { SubmitButton } from '../../components/buttons/SubmitButton/SubmitButton'
 import { Modal } from '../../template/Modal/Modal'
 import { Login } from './Login'
 import { Regestration } from './Regestration'
 import { selectButton } from './functions'
-
-export const SignUp = () => {
-
-  const [accounts, setAccounts] = useState([
-    {
-      id: Date.now(),
-      name: 'Kirill',
-      surname: 'Pechan',
-      login: 'Jiuper',
-      password: '213119Fg'
-    },
-    {
-      id: Date.now(),
-      name: 'Masha',
-      surname: 'Pechan',
-      login: 'MashaP',
-      password: '213119fg'
-    }
-  ])
+export const SignUp = ({accounts, setAccounts}) => {
 
   const [page, setPage] = useState(<Regestration
     accounts={accounts}
     setAccounts={setAccounts}
   />)
+
+  useEffect(() => {
+    setPage(<Regestration
+      accounts={accounts}
+      setAccounts={setAccounts}
+    />)
+  }, [accounts])
 
   return (
     <div className='signUp'>
@@ -43,16 +32,15 @@ export const SignUp = () => {
                 setAccounts={setAccounts}
               />}
             setValue={setPage}
-            addNewAccount={selectButton}
+            handleAction={selectButton}
             accounts={''}
           >
-
             Sign Up
           </SubmitButton>
           <SubmitButton
             value={<Login />}
             setValue={setPage}
-            addNewAccount={selectButton}
+            handleAction={selectButton}
             accounts={''}
           >
             Sign In
