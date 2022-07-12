@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import { Form } from '../../components/Form/Form'
 import { Input } from '../../components/Input/Input'
 import { SubmitButton } from '../../components/buttons/SubmitButton/SubmitButton'
-import { addNewAccount, handleChange } from './functions'
+import { addNewAccount, handleChange } from '../../pages/SignUp/functions'
 
 export const Regestration = ({ accounts, setAccounts }) => {
 
