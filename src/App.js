@@ -37,25 +37,29 @@ export const App = () => {
     }
   ])
 
-
   return (
     <div className='wrapper' >
       <Header />
       <div className='container'>
         <Routes>
           <Route path='/' element={<Main />} />
-          <Route path='/SignUp/*' element={
-            <SignUp
-              accounts={accounts}
-              setAccounts={setAccounts}
-            />} />
+          <Route path='/SignUp/*'
+            element={
+              <SignUp
+                accounts={accounts}
+                setAccounts={setAccounts}
+              />} />
           <Route path='/Booking/*' element={<Booking />} />
           <Route path='/User/:id'
             element={
               <User
                 accounts={accounts}
               />} />
-          <Route path='/Doctor/*' element={<Doctor accounts={accounts}/>} />
+          <Route path='/Doctor/*'
+            element={
+              <Doctor
+                accounts={accounts}
+              />} />
         </Routes>
       </div>
     </div>
