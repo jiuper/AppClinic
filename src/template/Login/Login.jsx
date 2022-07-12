@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Form } from '../../components/Form/Form'
 import { Input } from '../../components/Input/Input'
-import { handleChange } from './functions'
+import { handleChange } from '../../pages/SignUp/functions'
 
 export const Login = ({ accounts }) => {
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { Profile } from './Profile'
+import { Profile } from '../../template/Profile/Profile'
 
 export const User = ({ accounts }) => {
   

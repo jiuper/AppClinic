@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Profile = ({accounts, param}) => {
+export const Profile = ({ accounts, param }) => {
   return (
     <>
-    {
+      {
         accounts.filter(e => e.id === Number(param.id))
           .map(
             elem => (

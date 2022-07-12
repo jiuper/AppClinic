@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { SubmitButton } from '../../components/buttons/SubmitButton/SubmitButton'
 import { Modal } from '../../template/Modal/Modal'
-import { Login } from './Login'
-import { Regestration } from './Regestration'
+import { Login } from '../../template/Login/Login'
+import { Regestration } from '../../template/Login/Regestration'
 import { selectButton } from './functions'
-export const SignUp = ({ accounts, setAccounts, handleId,users }) => {
+
+export const SignUp = ({ accounts, setAccounts }) => {
 
   const [page, setPage] = useState(<Regestration
     accounts={accounts}
@@ -39,9 +40,9 @@ export const SignUp = ({ accounts, setAccounts, handleId,users }) => {
           </SubmitButton>
           <SubmitButton
             value={
-            <Login 
-            accounts={accounts} 
-            />}
+              <Login
+                accounts={accounts}
+              />}
             setValue={setPage}
             handleAction={selectButton}
             accounts={''}
