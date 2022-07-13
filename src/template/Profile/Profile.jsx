@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const Profile = ({ accounts, param }) => {
+
   return (
     <>
       {
@@ -11,6 +12,7 @@ export const Profile = ({ accounts, param }) => {
                 <div>{elem.name}</div>
                 <div>{elem.surname}</div>
                 <div>{elem.email}</div>
+                <div>{elem.occupation}</div>
               </div>
             )
           )

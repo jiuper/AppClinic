@@ -5,7 +5,7 @@ import { Input } from '../../components/Input/Input'
 import { SubmitButton } from '../../components/buttons/SubmitButton/SubmitButton'
 import { addNewAccount, handleChange } from '../../pages/SignUp/functions'
 
-export const Regestration = ({ accounts, setAccounts }) => {
+export const Regestration = ({ accounts, setAccounts, children }) => {
 
   const [account, setAccount] = useState(
     {
@@ -60,6 +60,7 @@ export const Regestration = ({ accounts, setAccounts }) => {
             handleChange={handleChange}
             setValue={setAccount}
           />
+          {children}
         </div>
         <SubmitButton
           value={account}

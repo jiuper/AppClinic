@@ -1,12 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Modal.css'
-export const Modal = ({ page, title, children }) => {
+export const Modal = ({ page, title, isActive, children }) => {
 
     const navigate = useNavigate()
 
     return (
-        <div className='modal'>
+        <div className={`modal ${isActive}`}>
             <div className='modal__container'>
                 <div className='modal__form'>
 
@@ -16,12 +16,9 @@ export const Modal = ({ page, title, children }) => {
                             <img src='https://cdn-icons-png.flaticon.com/512/748/748122.png' alt="close" />
                         </div>
                     </div>
-                    <div className='modal__head'>
+                    <>
                         {children}
-                    </div>
-                    <div className='modal__body'>
-                        {page}
-                    </div>
+                    </>
                 </div>
             </div>
         </div>

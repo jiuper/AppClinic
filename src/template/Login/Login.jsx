@@ -4,15 +4,15 @@ import { Form } from '../../components/Form/Form'
 import { Input } from '../../components/Input/Input'
 import { handleChange } from '../../pages/SignUp/functions'
 
-export const Login = ({ accounts }) => {
+export const Login = ({ accounts, path }) => {
 
   const [user, setUser] = useState({ login: '', password: '' })
   const [id, setId] = useState('')
-  
+
   useEffect(() => {
     setId(accounts.filter(e => e.login === user.login && e.password === user.password).map(elem => elem.id))
   }, [user])
-  
+
   return (
     <>
       <Form
@@ -34,7 +34,7 @@ export const Login = ({ accounts }) => {
             handleChange={handleChange}
           />
         </div>
-        <Link to={`/User/${id}`}>
+        <Link to={`${path}${id}`}>
           login
         </Link>
       </Form>

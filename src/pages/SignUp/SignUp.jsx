@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { SubmitButton } from '../../components/buttons/SubmitButton/SubmitButton'
+import React, { useState } from 'react'
 import { Modal } from '../../template/Modal/Modal'
 import { Login } from '../../template/Login/Login'
 import { Regestration } from '../../template/Login/Regestration'
-import { selectButton } from './functions'
 
 export const SignUp = ({ accounts, setAccounts }) => {
 
-  const [page, setPage] = useState(<Regestration
-    accounts={accounts}
-    setAccounts={setAccounts}
-  />)
-
-  useEffect(() => {
-    setPage(<Regestration
-      accounts={accounts}
-      setAccounts={setAccounts}
-    />)
-  }, [accounts])
+  const [page, setPage] = useState('1')
 
   return (
     <div className='signUp'>
@@ -25,30 +13,24 @@ export const SignUp = ({ accounts, setAccounts }) => {
         page={page}
         title={'Welcome'}
       >
-        <div className='modal__buttons'>
-          <SubmitButton
-            value={
-              <Regestration
+        <div className='modal__head'>
+          <div className='modal__buttons'>
+            <button onClick={() => setPage('0')}>Sign Up</button>
+            <button onClick={() => setPage('1')}>Sign In</button>
+          </div>
+        </div>
+        <div className='modal__body'>
+          {
+            page === '0'
+              ? <Regestration
                 accounts={accounts}
                 setAccounts={setAccounts}
-              />}
-            setValue={setPage}
-            handleAction={selectButton}
-            accounts={''}
-          >
-            Sign Up
-          </SubmitButton>
-          <SubmitButton
-            value={
-              <Login
+              />
+              : <Login
+                path={/User/}
                 accounts={accounts}
-              />}
-            setValue={setPage}
-            handleAction={selectButton}
-            accounts={''}
-          >
-            Sign In
-          </SubmitButton>
+              />
+          }
         </div>
       </Modal>
     </div>

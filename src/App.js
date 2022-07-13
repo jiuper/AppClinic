@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './App.css';
 import { Main } from './pages/Main/Main';
@@ -7,35 +7,11 @@ import { User } from './pages/User/User';
 import { SignUp } from './pages/SignUp/SignUp';
 import { Header } from './template/Header/Header';
 import { Doctor } from './pages/Doctor/Doctor';
-
+import { useUserData } from './Hooks/useUserData';
 export const App = () => {
 
-  const [accounts, setAccounts] = useState([
-    {
-      id: Date.now() + 1,
-      name: 'Kirill',
-      surname: 'Pechan',
-      email: 'asdsadsadmail.rt',
-      login: 'admin',
-      password: 'admin'
-    },
-    {
-      id: Date.now() + 2,
-      name: 'Masha',
-      surname: 'Pechan',
-      email: 'asds3adsadmail.rt',
-      login: 'MashaP',
-      password: '213119fg'
-    },
-    {
-      id: Date.now() + 3,
-      name: 'Masha',
-      surname: 'Pechan',
-      email: 'asasd3adsadmail.123t',
-      login: 'Masha',
-      password: '213119f'
-    }
-  ])
+
+  const [userProfile, setUserProfile, doctorProfile, setDoctorProfile] = useUserData()
 
   return (
     <div className='wrapper' >
@@ -46,23 +22,28 @@ export const App = () => {
           <Route path='/SignUp/*'
             element={
               <SignUp
-                accounts={accounts}
-                setAccounts={setAccounts}
+                accounts={userProfile}
+                setAccounts={setUserProfile}
               />} />
           <Route path='/Booking/*' element={<Booking />} />
           <Route path='/User/:id'
             element={
               <User
-                accounts={accounts}
+                accounts={userProfile}
               />} />
           <Route path='/Doctor/*'
             element={
               <Doctor
-                accounts={accounts}
+                accounts={doctorProfile}
+                setAccounts={setDoctorProfile}
+              />} />
+          <Route path='/Doctor/User/:id'
+            element={
+              <User
+                accounts={doctorProfile}
               />} />
         </Routes>
       </div>
     </div>
   );
 }
-
