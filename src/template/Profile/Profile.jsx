@@ -13,6 +13,7 @@ export const Profile = ({ accounts, param }) => {
                   <div>{elem.surname}</div>
                   <div>{elem.email}</div>
                   <div>{elem.occupation}</div>
+                  <div>{elem.doctor}</div>
                 </div>
             )
           )
