@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Modal.css'
-export const Modal = ({ page, title, isActive, children }) => {
+export const Modal = ({ title, isActive, children }) => {
 
     const navigate = useNavigate()
 

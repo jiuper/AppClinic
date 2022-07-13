@@ -1,0 +1,10 @@
+.booking__form{
+    display: grid;
+    grid-template-columns: repeat(3,200px);
+    grid-gap: 20px;
+}
+
+.option{
+    border:1px solid ;
+    font-size: 18px;
+}

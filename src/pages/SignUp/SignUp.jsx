@@ -25,6 +25,7 @@ export const SignUp = ({ accounts, setAccounts }) => {
               ? <Regestration
                 accounts={accounts}
                 setAccounts={setAccounts}
+                user={''}
               />
               : <Login
                 path={/User/}

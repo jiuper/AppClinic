@@ -25,6 +25,7 @@ export const Doctor = ({ accounts, setAccounts }) => {
                 <Regestration
                     accounts={accounts}
                     setAccounts={setAccounts}
+                    user=''
                 >
 
                 </Regestration>

@@ -11,7 +11,7 @@ import { useUserData } from './Hooks/useUserData';
 export const App = () => {
 
 
-  const [userProfile, setUserProfile, doctorProfile, setDoctorProfile] = useUserData()
+  const [userProfile, setUserProfile, doctorProfile, setDoctorProfile, doctors] = useUserData()
 
   return (
     <div className='wrapper' >
@@ -25,11 +25,18 @@ export const App = () => {
                 accounts={userProfile}
                 setAccounts={setUserProfile}
               />} />
-          <Route path='/Booking/*' element={<Booking />} />
+          <Route path='/Booking/*'
+            element={
+              <Booking
+                accounts={doctors}
+                doctorProfile={doctorProfile}
+                setAccounts={setUserProfile}
+              />} />
           <Route path='/User/:id'
             element={
               <User
                 accounts={userProfile}
+                doctorProfile={doctorProfile}
               />} />
           <Route path='/Doctor/*'
             element={
