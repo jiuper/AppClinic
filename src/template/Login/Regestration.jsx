@@ -4,8 +4,9 @@ import { Form } from '../../components/Form/Form'
 import { Input } from '../../components/Input/Input'
 import { SubmitButton } from '../../components/buttons/SubmitButton/SubmitButton'
 import { addNewAccount, handleChange } from '../../pages/SignUp/functions'
+import { useEffect } from 'react'
 
-export const Regestration = ({ accounts, setAccounts, children }) => {
+export const Regestration = ({ user, setAccounts }) => {
 
   const [account, setAccount] = useState(
     {
@@ -13,9 +14,15 @@ export const Regestration = ({ accounts, setAccounts, children }) => {
       surname: '',
       email: '',
       login: '',
-      password: ''
+      password: '',
+      occupation: '',
+      doctor: ''
     }
   )
+
+  useEffect(()=> {
+    setAccount({...account, occupation: user[1] , doctor: user[0]})
+  }, [user])
 
   return (
     <>
@@ -60,11 +67,9 @@ export const Regestration = ({ accounts, setAccounts, children }) => {
             handleChange={handleChange}
             setValue={setAccount}
           />
-          {children}
         </div>
         <SubmitButton
           value={account}
-          accounts={accounts}
           setValue={setAccounts}
           setAccount={setAccount}
           handleAction={addNewAccount}
@@ -77,17 +82,11 @@ export const Regestration = ({ accounts, setAccounts, children }) => {
 }
 
 Regestration.propTypes = {
-  accounts: propTypes.arrayOf(propTypes.shape({
-    id: propTypes.oneOfType([propTypes.number, propTypes.string]),
-    name: propTypes.string,
-    surname: propTypes.string,
-    age: propTypes.string,
-    login: propTypes.oneOfType([propTypes.number, propTypes.string]),
-    password: propTypes.oneOfType([propTypes.number, propTypes.string])
-  })),
-  setAccounts: propTypes.func
+  setAccounts: propTypes.func,
+  children: propTypes.oneOfType([propTypes.string, propTypes.number])
 }
 
 Regestration.defaultProp = {
-  accounts: []
+  setAccounts: propTypes.func,
+  children: ''
 }
