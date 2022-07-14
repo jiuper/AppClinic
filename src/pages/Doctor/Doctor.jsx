@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import { Input } from '../../components/Input/Input'
 import { Login } from '../../template/Login/Login'
 import { Regestration } from '../../template/Login/Regestration'
 import { Modal } from '../../template/Modal/Modal'
@@ -14,7 +13,7 @@ export const Doctor = ({ accounts, setAccounts }) => {
         <div className='doctor__profile'>
             <Login
                 accounts={accounts}
-                path={'/Doctor/User/'}
+                path={'/Doctor/DoctorProfile/'}
             />
             <h2>Регистрация нового специалиста</h2>
             <button onClick={() => setIsActive(null)}>Regestration</button>
@@ -26,11 +25,8 @@ export const Doctor = ({ accounts, setAccounts }) => {
                     accounts={accounts}
                     setAccounts={setAccounts}
                     user=''
-                >
-
-                </Regestration>
+                />
             </Modal>
-
         </div>
     )
 }
