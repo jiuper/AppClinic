@@ -68,7 +68,7 @@ export const useUserData = () => {
         booking: [
             {
                 userId: Date.now() + 1,
-                doctorId: Date.now() + 6,
+                doctorId: Date.now() + 4,
                 occupation: 'окулист',
                 doctor: 'Alex',
                 namePatient: 'Kirill Pechan'

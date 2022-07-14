@@ -38,6 +38,8 @@ export const App = () => {
               <User
                 accounts={userProfile}
                 booking={booking}
+                doctors={doctors}
+                doctorProfile={doctorProfile}
               />} />
           <Route path='/Doctor/*'
             element={
@@ -49,6 +51,8 @@ export const App = () => {
             element={
               <DoctorProfile
                 accounts={doctorProfile}
+                doctors={doctors}
+                booking={booking}
               />} />
         </Routes>
       </div>
