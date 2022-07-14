@@ -7,8 +7,6 @@ export const useUserData = () => {
                 name: 'Kirill',
                 surname: 'Pechan',
                 email: 'asdsadsadmail.rt',
-                occupation: '',
-                doctor: '',
                 login: '2',
                 password: '2'
             },
@@ -17,8 +15,6 @@ export const useUserData = () => {
                 name: 'Masha',
                 surname: 'Pechan',
                 email: 'asds3adsadmail.rt',
-                occupation: '',
-                doctor: '',
                 login: 'MashaP',
                 password: '213119fg'
             },
@@ -27,8 +23,6 @@ export const useUserData = () => {
                 name: 'Masha',
                 surname: 'Pechan',
                 email: 'asasd3adsadmail.123t',
-                occupation: '',
-                doctor: '',
                 login: 'Masha',
                 password: '213119f'
             },
@@ -71,15 +65,24 @@ export const useUserData = () => {
                 password: '1'
             },
         ],
-        doctors: 
-        [
-            'ортопед',
-            'хирург',
-            'педиатр',
-            'окулист',
-            'гинеколог',
-            'лор'
-        ]
+        booking: [
+            {
+                userId: Date.now() + 1,
+                doctorId: Date.now() + 4,
+                occupation: 'окулист',
+                doctor: 'Alex',
+                namePatient: 'Kirill Pechan'
+            }
+        ],
+        doctors:
+            [
+                'ортопед',
+                'хирург',
+                'педиатр',
+                'окулист',
+                'гинеколог',
+                'лор'
+            ],
     }
 
     const setUserProfile = (newUser) => {
@@ -91,5 +94,5 @@ export const useUserData = () => {
     }
 
 
-    return [store.userProfile, setUserProfile, store.doctorProfile, setDoctorProfile, store.doctors]
+    return [store.userProfile, setUserProfile, store.doctorProfile, setDoctorProfile, store.doctors, store.booking]
 }

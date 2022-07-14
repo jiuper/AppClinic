@@ -8,10 +8,11 @@ import { SignUp } from './pages/SignUp/SignUp';
 import { Header } from './template/Header/Header';
 import { Doctor } from './pages/Doctor/Doctor';
 import { useUserData } from './Hooks/useUserData';
+import { DoctorProfile } from './pages/Doctor/DoctorProfile';
 export const App = () => {
 
 
-  const [userProfile, setUserProfile, doctorProfile, setDoctorProfile, doctors] = useUserData()
+  const [userProfile, setUserProfile, doctorProfile, setDoctorProfile, doctors, booking] = useUserData()
 
   return (
     <div className='wrapper' >
@@ -36,6 +37,8 @@ export const App = () => {
             element={
               <User
                 accounts={userProfile}
+                booking={booking}
+                doctors={doctors}
                 doctorProfile={doctorProfile}
               />} />
           <Route path='/Doctor/*'
@@ -44,10 +47,12 @@ export const App = () => {
                 accounts={doctorProfile}
                 setAccounts={setDoctorProfile}
               />} />
-          <Route path='/Doctor/User/:id'
+          <Route path='/Doctor/DoctorProfile/:id'
             element={
-              <User
+              <DoctorProfile
                 accounts={doctorProfile}
+                doctors={doctors}
+                booking={booking}
               />} />
         </Routes>
       </div>
