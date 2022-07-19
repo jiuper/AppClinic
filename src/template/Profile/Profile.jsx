@@ -12,7 +12,8 @@ export const Profile = ({ accounts, booking, param, setUserBooking, setBooking }
     setUserBooking(
       {
         userId: accounts.find(e => e.id === +param.id)?.id,
-        namePatient: accounts.find(e => e.id === +param.id)?.name
+        namePatient: accounts.find(e => e.id === +param.id)?.name,
+        id: Date.now()
       })
   }, [accounts, param.id, booking, setUserBooking])
 
@@ -38,7 +39,7 @@ export const Profile = ({ accounts, booking, param, setUserBooking, setBooking }
             email={elem.email}
             occupation={elem.occupation}
           >
-            <button onClick={e => { handleRemove(elem.nameDoctor, booking, setBooking) }}>remove</button>
+            <button onClick={e => { handleRemove(elem.id, booking, setBooking) }}>remove</button>
           </ProfileItems>
         )
       }

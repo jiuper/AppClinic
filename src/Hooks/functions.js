@@ -8,5 +8,5 @@ export const doctors = [
 ]
 
 export const handleRemove = (id, booking, setBooking) => {
-    setBooking(booking.filter(e => e.nameDoctor !== id))
+    setBooking(booking.filter(e => e.id !== id))
 }

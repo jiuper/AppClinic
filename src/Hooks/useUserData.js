@@ -14,11 +14,11 @@ const initialArray = [
         name: 'Masha',
         surname: 'Pechan',
         email: 'asds3adsadmail.rt',
-        login: 'MashaP',
-        password: '213119fg'
+        login: '4',
+        password: '4'
     },
     {
-        id: Date.now() + 3,
+        id: 125,
         name: 'Masha',
         surname: 'Pechan',
         email: 'asasd3adsadmail.123t',
@@ -26,7 +26,6 @@ const initialArray = [
         password: '213119f'
     },
 ]
-
 
 export const useUserData = (arr = initialArray) => {
     const [userProfile, setUserProfile] = useState(arr)
