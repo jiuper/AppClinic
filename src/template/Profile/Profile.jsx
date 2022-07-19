@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { ProfileItems } from './ProfileItems'
-
-
+import { handleRemove } from '../../Hooks/functions'
 export const Profile = ({ accounts, booking, param, setUserBooking, setBooking }) => {
 
   const [user, setUser] = useState([])
   const [bookingDoctor, setBookingDoctor] = useState([])
-  
+
   useEffect(() => {
     setUser(accounts.filter(e => e.id === +param.id))
     setBookingDoctor(booking.filter(e => (e.userId === +param.id) || (e.doctorId === +param.id)))
     setUserBooking(
       {
         userId: accounts.find(e => e.id === +param.id)?.id,
-        namePatient: accounts.find(e => e.id === +param.id)?.name
+        namePatient: accounts.find(e => e.id === +param.id)?.name,
+        id: Date.now()
       })
   }, [accounts, param.id, booking, setUserBooking])
-
 
   return (
     <>
@@ -32,19 +31,18 @@ export const Profile = ({ accounts, booking, param, setUserBooking, setBooking }
         )
       }
       {
-        bookingDoctor.map(elem =>
+        bookingDoctor.map((elem, i) =>
           <ProfileItems
-            key={elem.nameDoctor}
+            key={i}
             name={elem.nameDoctor}
             surname={elem.namePatient}
             email={elem.email}
             occupation={elem.occupation}
           >
-            <button >remove</button>
+            <button onClick={e => { handleRemove(elem.id, booking, setBooking) }}>remove</button>
           </ProfileItems>
         )
       }
-
     </>
   )
 }

@@ -2,7 +2,7 @@ import { useState } from "react"
 
 const initialArray = [
     {
-        id: Date.now() + 1,
+        id: 123,
         name: 'Kirill',
         surname: 'Pechan',
         email: 'asdsadsadmail.rt',
@@ -10,15 +10,15 @@ const initialArray = [
         password: '2'
     },
     {
-        id: Date.now() + 2,
+        id: 124,
         name: 'Masha',
         surname: 'Pechan',
         email: 'asds3adsadmail.rt',
-        login: 'MashaP',
-        password: '213119fg'
+        login: '4',
+        password: '4'
     },
     {
-        id: Date.now() + 3,
+        id: 125,
         name: 'Masha',
         surname: 'Pechan',
         email: 'asasd3adsadmail.123t',
@@ -27,10 +27,9 @@ const initialArray = [
     },
 ]
 
-
 export const useUserData = (arr = initialArray) => {
     const [userProfile, setUserProfile] = useState(arr)
-    console.log(userProfile)
+
     return {
         userProfile,
         setUserProfile,

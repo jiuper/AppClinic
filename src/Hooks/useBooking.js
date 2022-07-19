@@ -1,32 +1,38 @@
-import React, { useState } from "react"
+import { useState } from "react"
 
 let initialState = [
     {
-        userId: Date.now() + 1,
+        userId: 123,
+        id: 1,
         doctorId: Date.now() + 6,
         occupation: 'окулист',
         nameDoctor: 'Alex',
         namePatient: 'Kirill Pechan'
     },
     {
-        userId: Date.now() + 2,
-        doctorId: Date.now() + 6,
-        occupation: 'окулист',
-        nameDoctor: 'Alex',
-        namePatient: 'Kirill Pechan'
+        userId: 124,
+        id: 2,
+        doctorId: 431,
+        occupation: 'ортопед',
+        nameDoctor: 'Alexsandr',
+        namePatient: 'Masha Pechan'
+    },
+    {
+        userId: 125,
+        id: 3,
+        doctorId: 431,
+        occupation: 'ортопед',
+        nameDoctor: 'Alexsandr',
+        namePatient: 'Masha Pechan'
     }
 ]
 
 export const useBooking = (arr = initialState) => {
+    
     const [booking, setBooking] = useState(arr)
-    console.log(booking)
-    const handleAdd = (note) => {
-        setBooking([...booking, note])
-    }
 
     return {
         booking,
         setBooking,
-        handleAdd
     }
 }

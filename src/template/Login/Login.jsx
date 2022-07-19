@@ -10,9 +10,9 @@ export const Login = ({ accounts, path }) => {
   const [id, setId] = useState('')
 
   useEffect(() => {
-    setId(accounts.filter(e => e.login === user.login && e.password === user.password).map(elem => elem.id))
-  }, [user])
-
+    setId(accounts.filter(e => e.login === user.login && e.password === user.password).map(e => e.id))
+  }, [accounts, user])
+  console.log(id)
   return (
     <>
       <Form

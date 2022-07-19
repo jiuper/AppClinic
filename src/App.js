@@ -12,14 +12,14 @@ import { DoctorProfile } from './pages/Doctor/DoctorProfile';
 import { useBooking } from './Hooks/useBooking';
 import { useDoctorProfile } from './Hooks/useDoctorProfile';
 import { doctors } from './Hooks/functions';
+
+
 export const App = () => {
 
+  const { userProfile, setUserProfile } = useUserData()
+  const { doctorProfile, setDoctorProfile } = useDoctorProfile()
+  const { booking, setBooking } = useBooking()
 
-  const {userProfile, setUserProfile} = useUserData()
-  const [doctorProfile, setDoctorProfile] = useDoctorProfile()
-  
-  const {booking, setBooking} = useBooking()
-  console.log(booking)
   return (
     <div className='wrapper' >
       <Header />
@@ -60,6 +60,7 @@ export const App = () => {
                 accounts={doctorProfile}
                 doctors={doctors}
                 booking={booking}
+                setBooking={setBooking}
               />} />
         </Routes>
       </div>

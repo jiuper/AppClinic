@@ -3,7 +3,7 @@ export const handleChange = (e, account, nameTitle, setAccount) => {
     setAccount({ ...account, [nameTitle.toLowerCase()] : e })
 }
 
-export const addNewAccount = (value, setValue, setAccount) => {
+export const addNewAccount = (value, setValue, setAccount,accounts) => {
     
     const newAccount = {
         ...value,
@@ -13,7 +13,7 @@ export const addNewAccount = (value, setValue, setAccount) => {
     if (value.name === '' || value.surname === '' || value.email === ''|| value.login === '' || value.password === '') {
         alert('Вы не заполили поля')
     } else {
-        setValue(newAccount)
+        setValue([...accounts,newAccount])
         alert('Вы успешно зарегистрировались')
         setAccount({ name: '', surname: '', email: '', login: '', password: '' })
     }
