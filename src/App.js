@@ -15,11 +15,10 @@ import { doctors } from './Hooks/functions';
 export const App = () => {
 
 
-  const {userProfile, setUserProfile} = useUserData()
+  const { userProfile, setUserProfile } = useUserData()
   const [doctorProfile, setDoctorProfile] = useDoctorProfile()
+  const { booking, setBooking } = useBooking()
   
-  const {booking, setBooking} = useBooking()
-  console.log(booking)
   return (
     <div className='wrapper' >
       <Header />
