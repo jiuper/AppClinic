@@ -9,16 +9,17 @@ import { Header } from './template/Header/Header';
 import { Doctor } from './pages/Doctor/Doctor';
 import { useUserData } from './Hooks/useUserData';
 import { DoctorProfile } from './pages/Doctor/DoctorProfile';
-import { userBooking } from './Hooks/useBooking';
+import { useBooking } from './Hooks/useBooking';
 import { useDoctorProfile } from './Hooks/useDoctorProfile';
 import { doctors } from './Hooks/functions';
 export const App = () => {
 
 
-  const [userProfile, setUserProfile,] = useUserData()
-  const [doctorProfile, setDoctorProfile,] = useDoctorProfile()
-  const [booking, setBooking] = userBooking()
-
+  const {userProfile, setUserProfile} = useUserData()
+  const [doctorProfile, setDoctorProfile] = useDoctorProfile()
+  
+  const {booking, setBooking} = useBooking()
+  console.log(booking)
   return (
     <div className='wrapper' >
       <Header />

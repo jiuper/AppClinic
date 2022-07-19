@@ -7,6 +7,4 @@ export const doctors = [
     'лор'
 ]
 
-export const handleRemove = (id, booking, setBooking) => {
-    booking = booking.filter(e => e.userId !== id)
-}
+
