@@ -16,13 +16,12 @@ export const Profile = ({ accounts, booking, param, setUserBooking, setBooking }
       })
   }, [accounts, param.id, booking, setUserBooking])
 
-
   return (
     <>
       {
         user.map(elem =>
           <ProfileItems
-            key={Math.floor(Math.random() * 22)}
+            key={elem.id}
             name={elem.name}
             surname={elem.surname}
             email={elem.email}
@@ -31,9 +30,9 @@ export const Profile = ({ accounts, booking, param, setUserBooking, setBooking }
         )
       }
       {
-        bookingDoctor.map(elem =>
+        bookingDoctor.map((elem, i) =>
           <ProfileItems
-            key={Math.floor(Math.random() * 10)}
+            key={i}
             name={elem.nameDoctor}
             surname={elem.namePatient}
             email={elem.email}
@@ -43,7 +42,6 @@ export const Profile = ({ accounts, booking, param, setUserBooking, setBooking }
           </ProfileItems>
         )
       }
-
     </>
   )
 }

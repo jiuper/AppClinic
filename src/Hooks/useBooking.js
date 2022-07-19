@@ -10,10 +10,10 @@ let initialState = [
     },
     {
         userId: 124,
-        doctorId: Date.now() + 6,
-        occupation: 'окулист',
-        nameDoctor: 'Alex',
-        namePatient: 'Kirill Pechan'
+        doctorId: 431,
+        occupation: 'ортопед',
+        nameDoctor: 'Alexsandr',
+        namePatient: 'Masha Pechan'
     }
 ]
 
