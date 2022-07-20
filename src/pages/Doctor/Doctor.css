@@ -1,0 +1,19 @@
+.doctor__profile button {
+  background: rgb(234, 86, 165);
+  height: 50px;
+  width: 150px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.doctor__profile > .form > .form__body > .form__login {
+    display: block
+  }
+
+.doctor__profile > .form > .form__body > .form__login > .item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+  }

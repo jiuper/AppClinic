@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const initialArray = [
+const initialState = [
     {
         id: 123,
         name: 'Kirill',
@@ -27,7 +27,7 @@ const initialArray = [
     },
 ]
 
-export const useUserData = (arr = initialArray) => {
+export const useUserData = (arr = initialState) => {
     const [userProfile, setUserProfile] = useState(arr)
 
     return {

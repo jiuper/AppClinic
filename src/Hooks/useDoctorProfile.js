@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const initialArray = [
+const initialState = [
     {
         id: Date.now() + 6,
         name: 'Alex',
@@ -40,7 +40,7 @@ const initialArray = [
 
 ]
 
-export const useDoctorProfile = (arr = initialArray) => {
+export const useDoctorProfile = (arr = initialState) => {
     const [doctorProfile, setDoctorProfile] = useState(arr)
 
     return {

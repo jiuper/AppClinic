@@ -1,0 +1,22 @@
+.modal__buttons button {
+  background: rgb(234, 86, 165);
+  height: 50px;
+  text-align: center;
+  border: none;
+  font-weight: bold;
+  color: #fff;
+}
+
+.modal__buttons button:hover {
+    background: rgb(0, 0, 0);
+
+  }
+
+.modal__buttons {
+  background: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-gap: 20px;
+  padding: 10px 30px;
+  border-radius: 5px;
+}

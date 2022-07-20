@@ -4,8 +4,9 @@ import { Form } from '../../components/Form/Form'
 import { Input } from '../../components/Input/Input'
 import { SubmitButton } from '../../components/buttons/SubmitButton/SubmitButton'
 import { addNewAccount, handleChange } from '../../pages/SignUp/functions'
+import { useEffect } from 'react'
 
-export const Regestration = ({ accounts,setAccounts }) => {
+export const Regestration = ({ accounts, setAccounts }) => {
 
   const [account, setAccount] = useState(
     {
@@ -20,7 +21,7 @@ export const Regestration = ({ accounts,setAccounts }) => {
   return (
     <>
       <Form
-        title='Form for registration new patient'
+        title='Регистрация'
       >
         <div className='form__items'>
           <Input
@@ -68,7 +69,7 @@ export const Regestration = ({ accounts,setAccounts }) => {
           setAccount={setAccount}
           handleAction={addNewAccount}
         >
-          register
+          Продолжить
         </SubmitButton>
       </Form>
     </>

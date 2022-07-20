@@ -12,6 +12,7 @@ import { DoctorProfile } from './pages/Doctor/DoctorProfile';
 import { useBooking } from './Hooks/useBooking';
 import { useDoctorProfile } from './Hooks/useDoctorProfile';
 import { doctors } from './Hooks/functions';
+import { Footer } from './template/Footer/Footer';
 
 
 export const App = () => {
@@ -23,47 +24,51 @@ export const App = () => {
   return (
     <div className='wrapper' >
       <Header />
-      <div className='container'>
-        <Routes>
-          <Route path='/' element={<Main />} />
-          <Route path='/SignUp/*'
-            element={
-              <SignUp
-                accounts={userProfile}
-                setAccounts={setUserProfile}
-              />} />
-          <Route path='/Booking/*'
-            element={
-              <Booking
-                accounts={doctors}
-                doctorProfile={doctorProfile}
-                setAccounts={setUserProfile}
-              />} />
-          <Route path='/User/:id'
-            element={
-              <User
-                accounts={userProfile}
-                booking={booking}
-                doctors={doctors}
-                doctorProfile={doctorProfile}
-                setBooking={setBooking}
-              />} />
-          <Route path='/Doctor/*'
-            element={
-              <Doctor
-                accounts={doctorProfile}
-                setAccounts={setDoctorProfile}
-              />} />
-          <Route path='/Doctor/DoctorProfile/:id'
-            element={
-              <DoctorProfile
-                accounts={doctorProfile}
-                doctors={doctors}
-                booking={booking}
-                setBooking={setBooking}
-              />} />
-        </Routes>
-      </div>
+      <main >
+        <div className='container'>
+          <Routes>
+            <Route path='/' element={<Main />} />
+            <Route path='/SignUp/*'
+              element={
+                <SignUp
+                  accounts={userProfile}
+                  setAccounts={setUserProfile}
+                />} />
+            <Route path='/Booking/*'
+              element={
+                <Booking
+                  accounts={userProfile}
+                  doctors={doctors}
+                  doctorProfile={doctorProfile}
+                  setAccounts={setUserProfile}
+                />} />
+            <Route path='/User/:id'
+              element={
+                <User
+                  accounts={userProfile}
+                  booking={booking}
+                  doctors={doctors}
+                  doctorProfile={doctorProfile}
+                  setBooking={setBooking}
+                />} />
+            <Route path='/Doctor/*'
+              element={
+                <Doctor
+                  accounts={doctorProfile}
+                  setAccounts={setDoctorProfile}
+                />} />
+            <Route path='/Doctor/DoctorProfile/:id'
+              element={
+                <DoctorProfile
+                  accounts={doctorProfile}
+                  doctors={doctors}
+                  booking={booking}
+                  setBooking={setBooking}
+                />} />
+          </Routes>
+        </div>
+      </main>
+      <Footer/>
     </div>
   );
 }

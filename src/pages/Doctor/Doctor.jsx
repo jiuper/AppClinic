@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Login } from '../../template/Login/Login'
 import { Regestration } from '../../template/Login/Regestration'
 import { Modal } from '../../template/Modal/Modal'
-
+import './Doctor.css'
 
 export const Doctor = ({ accounts, setAccounts }) => {
 
@@ -11,20 +11,19 @@ export const Doctor = ({ accounts, setAccounts }) => {
 
     return (
         <div className='doctor__profile'>
-            <Login
-                accounts={accounts}
-                path={'/Doctor/DoctorProfile/'}
-            />
+                <Login
+                    accounts={accounts}
+                    path={'/Doctor/DoctorProfile/'}
+                />
             <h2>Регистрация нового специалиста</h2>
-            <button onClick={() => setIsActive(null)}>Regestration</button>
+            <button onClick={() => setIsActive(null)}>Продолжить</button>
             <Modal
                 isActive={isActive}
-                title={'Welcome for new Doctor'}
+                title={'Регистрация нового специалиста'}
             >
                 <Regestration
                     accounts={accounts}
                     setAccounts={setAccounts}
-                    user=''
                 />
             </Modal>
         </div>

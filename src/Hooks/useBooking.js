@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-let initialState = [
+const initialState = [
     {
         userId: 123,
         id: 1,

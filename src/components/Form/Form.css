@@ -1,5 +1,16 @@
-.form__body button{
-    margin-top: 20px;
+.form__body button {
+  margin: 20px 0;
+  background: rgb(234, 86, 165);
+  height: 50px;
+  width: 150px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.form__body button:hover {
+  background: rgb(0, 0, 0);
 }
 
 .form__login,
@@ -8,14 +19,17 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-.form__items > .item {
-  display: grid;
-  grid-template-rows: 30px 20px;
+.form__body a {
+  background: rgb(234, 86, 165);
+  padding: 10px 50px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  margin: 20px 0;
 }
 
-.form__login > .item {
-  display: grid;
-  grid-template-rows: 30px 20px;
+.form__body a:hover {
+  background: rgb(0, 0, 0);
 }
 
 .item > input {

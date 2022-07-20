@@ -1,9 +1,28 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1 0 auto;
+}
+
 .container{
-    width: 1200px;
+    max-width: 1175px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
 .active__no{
     display: none;
+}
+
+.item input{
+    border-radius: 2px;
+    padding: 12px 15px;
+    background: none;
+    border: solid 1px #d9d9d9;
+    margin: 15px 0;
+    outline: none;
 }

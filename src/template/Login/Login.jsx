@@ -12,11 +12,11 @@ export const Login = ({ accounts, path }) => {
   useEffect(() => {
     setId(accounts.filter(e => e.login === user.login && e.password === user.password).map(e => e.id))
   }, [accounts, user])
-  console.log(id)
+
   return (
     <>
       <Form
-        title='Form login'
+        title='Вход в систему'
       >
         <div className='form__login'>
           <Input
@@ -34,9 +34,11 @@ export const Login = ({ accounts, path }) => {
             handleChange={handleChange}
           />
         </div>
-        <Link to={`${path}${id}`}>
-          login
-        </Link>
+        <button>
+          <Link to={`${path}${id}`}>
+            Вход
+          </Link>
+        </button>
       </Form>
     </>
   )

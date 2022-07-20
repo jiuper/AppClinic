@@ -2,24 +2,21 @@ import React, { useState } from 'react'
 import { Form } from '../../components/Form/Form'
 import { SelectList } from './SelectList'
 import './Booking.css'
-import { Regestration } from '../../template/Login/Regestration'
 
-export const Booking = ({ accounts, doctorProfile, setAccounts }) => {
-  
-  const [user, setUser] = useState([])
+export const Booking = ({ doctors, doctorProfile }) => {
+
+  const [user, setUser] = useState()
+
+  console.log(user)
   return (
     <>
       <h2>Booking Coupon</h2>
       <Form>
         <div className='booking__form'>
           <SelectList
-            accounts={accounts}
+            accounts={doctors}
             doctorProfile={doctorProfile}
             setUser={setUser}
-          />
-          <Regestration
-            user={user}
-            setAccounts={setAccounts}
           />
         </div>
       </Form>

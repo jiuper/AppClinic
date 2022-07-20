@@ -5,7 +5,7 @@
 }
 
 .header__logo img {
-  width: 120px;
+  width: 80px;
 }
 
 .header__nav{
@@ -17,4 +17,13 @@
 .header__nav a {
   text-decoration: none;
   color: black;
+}
+
+.header__nav a:hover {
+  color: rgb(234, 86, 165);
+}
+
+header{
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
